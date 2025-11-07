@@ -31,8 +31,9 @@
             android:onClick="AddItem_Click"
             android:text="Add Item"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ed_Item"
-            tools:layout_editor_absoluteX="161dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_Item" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout

@@ -7,37 +7,32 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseUser;
 
-public class AuthActivity extends AppCompatActivity {
+// Extends BaseActivity to inherit the common options menu.
+public class AuthActivity extends BaseActivity {
 
     EditText ed_Email, ed_Password;
     TextView tv_Data;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
-        Weddings();
+        Weddings(); // Reverted to original name
     }
 
-    public void Weddings()
-    {
+    public void Weddings() { // Reverted to original name
         ed_Email = findViewById(R.id.ed_Email);
         ed_Password = findViewById(R.id.ed_Password);
         tv_Data = findViewById(R.id.tv_Data);
     }
+
     public void CreateUser_Click(View view) {
         String email = ed_Email.getText().toString().trim();
         String password = ed_Password.getText().toString().trim();
@@ -47,35 +42,29 @@ public class AuthActivity extends AppCompatActivity {
             return;
         }
 
-        if(FBRef.refAuth.getCurrentUser() != null)
-        {
+        // As requested: Sign out the previous user before creating a new one.
+        if (FBRef.refAuth.getCurrentUser() != null) {
             FBRef.refAuth.signOut();
         }
+
         FBRef.refAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            FirebaseUser user = FBRef.refUser;
-                            tv_Data.setText("User created: " + user.getUid());
+                            FirebaseUser user = FBRef.refAuth.getCurrentUser();
+                            if (user != null) {
+                                tv_Data.setText("User created: " + user.getUid());
+                                Toast.makeText(AuthActivity.this, "User created successfully.", Toast.LENGTH_SHORT).show();
+                            }
                         } else {
-                            // If sign in fails, display a message to the user.
-                            tv_Data.setText("Authentication failed: " + task.getException().getMessage());
+                            if (task.getException() != null) {
+                                tv_Data.setText("Authentication failed: " + task.getException().getMessage());
+                            }
                             Toast.makeText(AuthActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
-    }
-
-    @Override
-    protected void onDestroy() {
-        if(FBRef.refAuth.getCurrentUser() != null)
-        {
-            FBRef.refAuth.signOut();
-        }
-
-        super.onDestroy();
     }
 }
