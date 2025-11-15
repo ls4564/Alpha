@@ -6,6 +6,8 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.concurrent.TimeoutException;
+
 public class BaseActivity extends AppCompatActivity {
 
     @Override
@@ -33,6 +35,11 @@ public class BaseActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.menuCamera) {
             intent = new Intent(this, Camera.class);
+            startActivity(intent);
+            return true;
+        }
+        else if (id == R.id.menuTimePicker) {
+            intent = new Intent(this, TimePickerActivity.class);
             startActivity(intent);
             return true;
         }
