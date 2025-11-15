@@ -15,4 +15,7 @@
     <item
         android:id="@+id/menuTimePicker"
         android:title="TimePicker" />
+    <item
+        android:id="@+id/menuCharge"
+        android:title="Charge" />
 </menu>
