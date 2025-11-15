@@ -18,4 +18,11 @@
     <item
         android:id="@+id/menuCharge"
         android:title="Charge" />
+    <item
+        android:id="@+id/menuQR_Code_Generator"
+        android:title="QR Code Generator" />
+    <item
+        android:id="@+id/menuQR_Code_Scanner"
+        android:title="QR Code Scanner" />
+
 </menu>

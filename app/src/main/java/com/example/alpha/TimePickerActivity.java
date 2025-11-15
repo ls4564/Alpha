@@ -21,7 +21,7 @@ import androidx.core.content.ContextCompat;
 
 import java.util.Calendar;
 
-public class TimePickerActivity extends AppCompatActivity {
+public class TimePickerActivity extends BaseActivity {
 
     private static final int NOTIFICATION_PERMISSION_CODE = 101;
     private static final int ALARM_REQUEST_CODE = 102;

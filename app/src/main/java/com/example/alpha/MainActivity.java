@@ -1,6 +1,7 @@
 package com.example.alpha;
 
 import android.os.Bundle;
+import android.view.View;
 
 /**
  * The main activity of the application.
@@ -19,4 +20,6 @@ public class MainActivity extends BaseActivity {
         super.onDestroy();
         FBRef.refAuth.signOut();
     }
+
+
 }
