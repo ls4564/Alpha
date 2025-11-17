@@ -7,37 +7,49 @@
     android:layout_height="match_parent"
     tools:context=".AuthActivity">
 
-    <EditText
-        android:id="@+id/ed_Email"
-        android:layout_width="300dp"
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="text"
+        android:layout_marginTop="50dp"
+        android:text="Authentication Demo"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:id="@+id/ed_Email"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+    <EditText
         android:id="@+id/ed_Password"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Password"
-        android:inputType="text"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_Email" />
 
     <Button
+        android:id="@+id/btnCreateUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="30dp"
         android:onClick="CreateUser_Click"
-        android:text="Button"
+        android:text="Create User"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_Password" />
@@ -46,10 +58,11 @@
         android:id="@+id/tv_Data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:text="נתונים"
-        android:textSize="34sp"
+        android:layout_marginTop="50dp"
+        android:text="Status will be here"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_Password" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCreateUser" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

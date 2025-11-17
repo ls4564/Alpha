@@ -18,6 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
         tools:targetApi="31">
+
+        <!-- Google Pay meta-data -->
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" />
+
+        <activity
+            android:name=".Google_Pay"
+            android:exported="false" />
         <activity
             android:name=".QR_Code_Scanner"
             android:exported="false" />

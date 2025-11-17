@@ -24,5 +24,8 @@
     <item
         android:id="@+id/menuQR_Code_Scanner"
         android:title="QR Code Scanner" />
+    <item
+        android:id="@+id/menuGoogle_Pay"
+        android:title="Google Pay" />
 
 </menu>
