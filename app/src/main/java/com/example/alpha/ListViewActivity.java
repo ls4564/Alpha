@@ -26,6 +26,7 @@ public class ListViewActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
+        setTitle("List View Demo");
         Weddings();
 
         items = new ArrayList<>();

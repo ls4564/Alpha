@@ -15,6 +15,7 @@ public class ChargeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_charge);
+        setTitle("Charge Demo");
 
         // Create an instance of the receiver.
         chargeReceiver = new ChargeReceiver();

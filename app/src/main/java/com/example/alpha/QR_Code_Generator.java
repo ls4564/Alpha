@@ -23,6 +23,7 @@ public class QR_Code_Generator extends BaseActivity {
         super.onCreate(savedInstanceState);
         // Make sure you are using the correct layout file, e.g., R.layout.activity_qr_code_generator
         setContentView(R.layout.activity_qr_code_generator);
+        setTitle("QR Code Generator Demo");
         etText = findViewById(R.id.etText);
         imageCode = findViewById(R.id.imageCode);
     }

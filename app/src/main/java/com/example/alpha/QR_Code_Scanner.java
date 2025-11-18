@@ -42,6 +42,7 @@ public class QR_Code_Scanner extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_code_scanner);
+        setTitle("QR Code Scanner Demo");
         textContent = findViewById(R.id.textContent);
     }
 

@@ -24,6 +24,7 @@ public class AuthActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
+        setTitle("Auth Demo");
         Weddings(); // Reverted to original name
     }
 
